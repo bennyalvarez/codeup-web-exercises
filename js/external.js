@@ -35,10 +35,10 @@
 
 //alert("your total pay is: $" + totalPay + " dollars.")
 
-var classHasRoom = confirm(“Hey, is there room in Fluker’s Intro to Mass Media class?”);
-var noScheduleConflict = confirm(“Can you take a class at 8 AM?”);
+var classHasRoom = prompt("Is there room in Neptune's class?");
+var noScheduleConflict = prompt("Can you take a class at 9am?")
 
-alert(“You can has class: “ + (classHasRoom && noScheduleConflict));
+var canRegister = (classHasRoom && noScheduleConflict);
 
 alert("Can you register for this class? The answer is: " + canRegister);
 
