@@ -183,7 +183,7 @@ function analyzeColor(color) {
         if (isNaN(userAnswer)) {
             alert(userAnswer + " is not a number, sorry.")
         }
-        if (number % 2 == 0) {
+        if (number % 2 === 0) {
             alert("The number is even.");
         } else {
             alert("The number is odd.");
