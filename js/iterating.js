@@ -50,16 +50,30 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    var arr = [ 1, 2, 3, 4, 5 ];
+  // var arr = [ 1, 2, 3, 4, 5 ];
 
-    var first = arr[0];
-    console.log(first);
-    var second = arr[1];
-    console.log(second);
-    var last = arr[4];
-    console.log(last);
+  // var first = arr[0];
+  // console.log(first);
+  // var second = arr[1];
+  // console.log(second);
+  // var last = arr[4];
+  // console.log(last);
 
+   function first(arr) {
+       return arr[0];
+   }
 
+   console.log(first(["red","orange","yellow","green","blue","indigo"]));
 
+   function second(arr) {
+       return arr[1];
+   }
+
+   console.log("The second element is ", second(["red","orange","yellow","green"]));
+
+   function last(arr) {
+       return arr[arr.length -1];
+   }
+   console.log(last([1,2,3,4,5]));
 
 })();
