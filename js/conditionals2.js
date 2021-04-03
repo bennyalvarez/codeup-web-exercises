@@ -175,3 +175,4 @@ var participate = confirm("Would you like to enter a number?")
  //       case
  //   }
 
+//this is a second attempt at this exercise for better practice.
