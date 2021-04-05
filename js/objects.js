@@ -248,3 +248,4 @@
 })();
 
 //completed exercise
+//console.log
