@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+</head>
+<body>
+    <h1>Forms Lecture</h1>
+    <h2>Exploring the ever present forms in HTML</h2>
+    <hr>
+
+
+    <form action="https://www.elformo.com/forms/d58c72b7-5968-473d-8a5f-74188b35dd42" method="post" accept-charset="UTF-8">
+
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Username here">
+        <br>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Password here">
+        <br>
+
+        <label for="body-text">Tell me about yourself...</label>
+        <br>
+        <textarea id="body-text" name="body" cols="30" rows="10"></textarea>
+        <br>
+
+        <h3>What is the correct answer?</h3>
+
+        <input name="multi-choice1" id="choice-a" value="wrong" type="radio">
+        <label for="choice-a">A</label>
+        <br>
+        <input name="multi-choice2" id="choice-b" value="wrong" type="radio">
+        <label for="choice-a">B</label>
+        <br>
+        <input name="multi-choice3" id="choice-c" value="correct" type="radio">
+        <label for="choice-a">C</label>
+        <br>
+        <input name="multi-choice4" id="choice-d" value="wrong" type="radio">
+        <label for="choice-a">D</label>
+        <br>
+
+        <h3>How'd you hear about us?</h3>
+        <label for="ad-bb">Billboard</label>
+        <input id="ad-bb" name="advertising" type="checkbox">
+        <label for="ad-yt">Billboard</label>
+        <input id="ad-yt" name="advertising" type="checkbox">
+        <label for="ad-np">Billboard</label>
+        <input id="ad-np" name="advertising" type="checkbox">
+        <br>
+
+        <input name="newsletter" type="checkbox" checked><span>Would you like to sign upnfor our news letter?</span>
+        <br>
+
+        <h3>
+            <label for="coffee-preference">What kind of coffee roast do you like?</label>
+        </h3>
+        <select id="coffee-preference" name="coffee_preference">
+            <option value="light">Light Roast</option>
+            <option value="medium">Medium Roast</option>
+            <option value="dark">Dark Roast</option>
+            <option value="espresso">Espresso Blend</option>
+        </select>
+        <br>
+
+        <input name="the-answer" value="42" type="hidden">
+        <br>
+
+        <label for="nonactive">Ignore this</label>
+        <input id="nonactive" name="userId" type="text" disabled value="c-wd-sa-620774">
+        <br>
+
+        <button type="submit">Explore the fun fun world of forms!</button>
+    </form>
+</body>
+</html>
