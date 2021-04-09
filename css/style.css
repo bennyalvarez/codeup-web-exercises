@@ -1,0 +1,66 @@
+/*
+multi
+line
+comment
+*/
+body {
+    font-family: Helvetica, Arial, Sans-Serif;
+    background-color: #e3cbae;
+    background-image: url(../img/codeup_arrow.jpeg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 100px 100px;
+}
+
+.fancy-header {
+    color: darkblue; /* single line comment */
+    text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+ol {
+    list-style: upper-alpha;
+}
+
+ul {
+    list-style: square;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+
+table {
+    table-layout: auto;
+    width: 200px;
+    border-collapse: collapse;
+    border: 3px solid purple;
+}
+
+td {
+    border: 1px solid blue;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
