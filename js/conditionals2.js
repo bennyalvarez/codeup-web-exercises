@@ -21,115 +21,116 @@
  */
 function analyzeColor(input) {
     if (input === 'blue') {
-        return "Blue is the color of the sky.";
+        return "blue is the color of the sky";
     } else if (input === 'red') {
-        return "Strawberries are red.";
+        return "Strawberries are red";
     } else if (input === 'cyan') {
         return "I don't know anything about cyan";
     } else {
         return "I don't know anything about that color.";
     }
 }
-console.log(analyzeColor('blue'));
+
 console.log(analyzeColor('red'));
 console.log(analyzeColor('cyan'));
+console.log(analyzeColor('blue'));
 
-
-// Don't change the next two lines!
-// These lines create two variables for you:
-// - `colors`: a list of the colors of the rainbow
-// - `randomColor`: contains a single random color value from the list (this
-//                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-switch(analyzeColor) {
-    case 'blue':
-        alert('Blue is the color of the sky.');
-        break;
-    case 'red':
-        alert('Strawberries are red.');
-        break;
-    case 'cyan':
-        alert('I do not know anything about cyan.');
-        break;
-    default:
-        alert('I do not know anything of that color.');
-        break;
-}
 
-/**
- * TODO:
- * Prompt the user for a color when the page loads, and pass the input from the
- * user to your `analyzeColor` function. Alert the return value from your
- * function to show it to the user.
- */
-var userInput = prompt("please tell me a color.");
+    var userColor = prompt("What is your favorite color?");
 
-console.log(analyzeColor(userInput));
-
-/* ########################################################################## */
-
-/**
- * TODO:
- * Suppose there's a promotion in Walmart, each customer is given a randomly
- * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
- * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
- * the discount is 25%, if it's 3, 35%, if it's 4, 50%, and if it's 5 you'll get
- * all for free!.
- *
- * Write a function named `calculateTotal` that accepts a lucky number and total
- * amount, and returns the discounted price.
- *
- * Example:
- * calculateTotal(0, 100) // returns 100
- * calculateTotal(4, 100) // returns 50
- * calculateTotal(5, 100) // returns 0
- *
- * Test your function by passing it various values and checking for the expected
- * return value.
- */
-function calculateTotal(luckyNum, totalAmt) {
-    if (luckyNum === 0) {
-        return parseFloat(totalAmt - (totalAmt * 0)).toFixed(2);
-    } else if (luckyNum === 1) {
-        return parseFloat(totalAmt - (totalAmt * .10)).toFixed(2);
-    } else if (luckyNum === 2) {
-        return parseFloat(totalAmt - (totalAmt * .25)).toFixed(2);
-    } else if (luckyNum === 3) {
-        return parseFloat(totalAmt - (totalAmt * .35)).toFixed(2);
-    } else if (luckyNum === 4) {
-        return parseFloat(totalAmt - (totalAmt * .50)).toFixed(2);
-    } else if (luckyNum === 5) {
-        return parseFloat(totalAmt - (totalAmt * 1)).toFixed(2);
+    switch (userColor.toLowerCase()) {
+        case "blue":
+            console.log(userColor + " is the color of the sky");
+            break;
+        case "red":
+            console.log("Strawberries are " + userColor);
+            break;
+        case "cyan":
+            console.log("I don't know anything about cyan");
+            break;
+        default:
+            console.log("I don't know anything about " + userColor);
+            break;
     }
-}
-console.log(calculateTotal(0,100));
-console.log(calculateTotal(4,100));
-console.log(calculateTotal(5,100));
-/**
- * TODO:
- * Uncomment the line below to generate a random number between 0 and 6.
- * Prompt the user for their total bill, then use your `calculateTotal` function
- * and alerts to display to the user what their lucky number was, what their
- * price before the discount was, and what their price after the discount is.
- */
+
+
+    /**
+     * TODO:
+     * Prompt the user for a color when the page loads, and pass the input from the
+     * user to your `analyzeColor` function. Alert the return value from your
+     * function to show it to the user.
+     */
+    var yourColor = prompt("Please choose a color.").toLowerCase()
+    console.log(analyzeColor(yourColor));
+
+    /* ########################################################################## */
+
+    /**
+     * TODO:
+     * Suppose there's a promotion in Walmart, each customer is given a randomly
+     * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
+     * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
+     * the discount is 25%, if it's 3, 35%, if it's 4, 50%, and if it's 5 you'll get
+     * all for free!.
+     *
+     * Write a function named `calculateTotal` that accepts a lucky number and total
+     * amount, and returns the discounted price.
+     *
+     * Example:
+     * calculateTotal(0, 100) // returns 100
+     * calculateTotal(4, 100) // returns 50
+     * calculateTotal(5, 100) // returns 0
+     *
+     * Test your function by passing it various values and checking for the expected
+     * return value.
+     */
+     function calculateTotal(luckyNumber,totalAmount) {
+        if (luckyNumber === 5) {
+            return parseFloat(totalAmount * 0).toFixed(2);
+        } else if (luckyNumber === 4) {
+            return parseFloat(totalAmount * .50).toFixed(2);
+        } else if (luckyNumber === 3) {
+            return parseFloat(totalAmount * .35).toFixed(2);
+        } else if (luckyNumber === 2) {
+            return parseFloat(totalAmount * .25).toFixed(2);
+        } else if (luckyNumber === 1) {
+            return parseFloat(totalAmount * .10).toFixed(2);
+        } else if (luckyNumber === 0) {
+            return parseFloat(totalAmount * 1).toFixed(2);
+        }
+    }
+    console.log(calculateTotal(5,100));
+    console.log(calculateTotal(4,100));
+    console.log(calculateTotal(3,100));
+    console.log(calculateTotal(2,100));
+    console.log(calculateTotal(1,100));
+    console.log(calculateTotal(0,100));
+    /**
+     * TODO:
+     * Uncomment the line below to generate a random number between 0 and 6.
+     * Prompt the user for their total bill, then use your `calculateTotal` function
+     * and alerts to display to the user what their lucky number was, what their
+     * price before the discount was, and what their price after the discount is.
+     */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-var originalPrice = parseFloat(prompt("How much was your total bill?"));
+  var luckyNumber = Math.floor(Math.random() * 6);
 
-
-alert("Your lucky number is " + luckyNumber + ". Your price before is $ " + originalPrice + " and based on your lucky" +
-    "number, the new price is $" + (calculateTotal(luckyNumber,originalPrice)));
+  var totalBill = parseFloat(prompt("What is your total bill?")).toFixed(2);
+  alert("Your lucky number is " + luckyNumber + ". That means your new price is $" + (totalBill-calculateTotal(luckyNumber,totalBill)) + ".");
 
 
 /**
@@ -148,31 +149,30 @@ alert("Your lucky number is " + luckyNumber + ". Your price before is $ " + orig
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-var participate = confirm("Would you like to enter a number?")
-    if (participate === true) {
-        var userNumber = prompt("What is your number?");
-        if (isNaN(userNumber)) {
-            alert( userNumber + " is not a number dude.");
-        } else if (userNumber % 2 === 0) {
-            alert(userNumber + " is even");
-        } else {
-            alert(userNumber + " is odd.");
-        }
-        if (userNumber > 0) {
-            alert(userNumber + " is positive.");
-        } else {
-            alert(userNumber + " is negative.");
-        }
-        var addHundred = parseFloat(userNumber) + 100;
-        alert(addHundred + " is your number plus 100.");
+
+
+var UserAnswer = confirm("Would you like to enter a number?");
+if (UserAnswer === true) {
+    var number = parseFloat(prompt("Please enter a number."));
+    if (isNaN(UserAnswer)) {
+        alert(UserAnswer + " is not a number, sorry.")
     }
+    if (number % 2 === 0) {
+        alert("The number is even.");
+    } else {
+        alert("The number is odd.");
+    }
+    if (number > 0) {
+        alert("The number is positive.");
+    } else {
+        alert("The number is negative.");
+    }
+    var AddHundred = number + 100
+    alert(AddHundred + " is your number plus a hundred.");
 
-//code is incomplete because i can't break out if it is a NaN and i still need to coordinate last else stmt that says bye.
+} else {
+    alert("Fine then, bye!");
+}
 
-//var numberEntry = prompt("What is your number?");
 
- //   switch(numberEntry) {
- //       case
- //   }
 
-//this is a second attempt at this exercise for better practice.
