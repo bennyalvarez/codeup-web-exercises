@@ -63,15 +63,13 @@ fieldset {
     padding: 8px;
     color: white;
     font-weight: bold;
-    border: 1px lightgrey;
+    border: 1px lightgrey solid;
 
 }
 
 .form-control {
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    padding: 4px 0;
+    margin: .5em 0;
     /* There must be 4px on top of the text and below the text of an input with this class */
     /* It should have a separation of .5em from elements on top of it and below it */
 
@@ -80,6 +78,7 @@ fieldset {
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
     width: calc(100% - 5px);
+    border-width: 2px;
 }
 
 
