@@ -94,6 +94,7 @@ a {
     width: calc(50% - 1em);
     margin: 0 0.5em;
     float: left;
+    padding: 0.5em;
 }
 
 .who-to-follow {
@@ -127,9 +128,9 @@ a {
     float: left;
 }
 .profile-items {
+    list-style-type: none;
     padding: 0;
 }
 .profile-entry {
-    list-style-type: none;
     margin: 0.5em;
 }
