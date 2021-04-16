@@ -1,3 +1,5 @@
+
+
 html {
     box-sizing: border-box;
 }
@@ -25,8 +27,6 @@ body {
     width: 100%;
     /* TODO: add a flex container to this selector */
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .flex-form {
