@@ -18,3 +18,7 @@ h1 {
 i {
     color: grey;
 }
+
+.btn {
+    float: right;
+}
