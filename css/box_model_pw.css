@@ -1,0 +1,44 @@
+.box {
+    border: 1px solid black;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    /*padding is because 10px+10px and minus 1px from each border side from 22px
+    so total would be height 172x72*/
+
+
+}
+
+#red {
+    background-color: #f00;
+}
+
+#orange {
+    background-color: #ffA500;
+    margin-left: 30px;
+
+
+}
+
+#yellow {
+    background-color: #ffff00;
+    margin-left: 60px;
+}
+
+#green {
+    background-color: #008000;
+    margin-left: 90px;
+}
+
+#blue {
+    background-color: #0000ff;
+    margin-left: 120px;
+}
+
+#purple {
+    background-color: #9370db;
+    margin-left: 150px;
+}
