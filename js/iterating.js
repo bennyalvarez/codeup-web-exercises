@@ -50,7 +50,7 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-  // var arr = [ 1, 2, 3, 4, 5 ];
+  var arr = [ 1, 2, 3, 4, 5 ];
 
   // var first = arr[0];
   // console.log(first);
