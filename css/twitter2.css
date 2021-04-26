@@ -34,6 +34,7 @@ a {
 .top-nav {
     background: var(--light-bg);
     position: fixed;
+    display: inline-block;
     width: 100%;
     z-index: 1000;
 
@@ -65,7 +66,60 @@ a {
 .profile-form {
     float: right;
     line-height: 80px;
+    align-items: center;
 
+}
+
+.container {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.profile-details {
+    float: left;
+    width: calc(25% - 10px);
+    margin: 0 .5em;
+}
+
+.timeline {
+    float: left;
+    width: calc(50% - 10px);
+    margin: 0 .5em;
+}
+
+.who-to-follow {
+    float: right;
+    width: calc(25% - 40px);
+    margin: 0 .5em;
+}
+
+.media {
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: .5em;
+    overflow: auto;
+
+}
+
+.media-image {
+    width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
+}
+
+.profile-items {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-entry {
+    margin: .5em;
 }
 
 .btn {
