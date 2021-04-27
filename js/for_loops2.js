@@ -1,6 +1,6 @@
 "use strict";
 
-//#2 Exercise Multiplication Table
+/*//#2 Exercise Multiplication Table
 function showMultiplicationTable(number) {
     for(var multiplier = 1; multiplier <=10; multiplier++) {
         console.log(number + " * " + multiplier + " = " + multiplier*number);
@@ -63,7 +63,7 @@ function askForNumber() {
     var continueLoop = true;
     while (userInput > 0 && userInput <= 50 && continueLoop) {
         if (userInput % 2 === 1) {
-            debugger;
+
             for(var i = 1; i <= 50; i++) {
                 if (i % 2 === 0) continue;
                 if (userInput === i) {
@@ -80,7 +80,33 @@ function askForNumber() {
 }
 askForNumber();
 
-//While Loop
+//While Loop*/
+
+function askForNumber() {
+    var userInput = parseInt(prompt("Give an odd number between 1 and 50."));
+    var continueLoop = true;
+    while (userInput > 0 && userInput <= 50 && continueLoop) {
+        if (userInput % 2 === 1) {
+
+            for(var i = 1; i <= 50; i++) {
+                if (i % 2 === 0) continue;
+            else if (userInput === i) {
+                    console.log("Yikes! Skipping number: " + userInput);
+                } else {
+                    console.log("Here is an odd number: " + i);
+                }
+            }
+            continueLoop = false; //print out odd numbers.
+        } else {
+            userInput = parseInt(prompt("The number you entered is not odd. Please enter an odd number between 1 and 50."));
+        }
+    }
+}
+askForNumber();
+
+
+
+
 
 
 
