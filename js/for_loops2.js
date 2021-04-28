@@ -82,30 +82,39 @@ askForNumber();
 
 //While Loop*/
 
-function askForNumber() {
-    var userInput = parseInt(prompt("Give an odd number between 1 and 50."));
-    var continueLoop = true;
-    while (userInput > 0 && userInput <= 50 && continueLoop) {
-        if (userInput % 2 === 1) {
+// function askForNumber() {
+//     var userInput = parseInt(prompt("Give an odd number between 1 and 50."));
+//     var continueLoop = true;
+//     while (userInput > 0 && userInput <= 50 && continueLoop) {
+//         if (userInput % 2 === 1) {
+//
+//             for(var i = 1; i <= 50; i++) {
+//                 if (i % 2 === 0) continue;
+//             else if (userInput === i) {
+//                     console.log("Yikes! Skipping number: " + userInput);
+//                 } else {
+//                     console.log("Here is an odd number: " + i);
+//                 }
+//             }
+//             continueLoop = false; //print out odd numbers.
+//         } else {
+//             userInput = parseInt(prompt("The number you entered is not odd. Please enter an odd number between 1 and 50."));
+//         }
+//     }
+// }
+// askForNumber();
 
-            for(var i = 1; i <= 50; i++) {
-                if (i % 2 === 0) continue;
-            else if (userInput === i) {
-                    console.log("Yikes! Skipping number: " + userInput);
-                } else {
-                    console.log("Here is an odd number: " + i);
-                }
-            }
-            continueLoop = false; //print out odd numbers.
-        } else {
-            userInput = parseInt(prompt("The number you entered is not odd. Please enter an odd number between 1 and 50."));
-        }
-    }
+
+
+
+
+
+
+var allCones = Math.floor(Math.random() * 50) + 50;
+
+do {
+    var conesBought = Math.floor(Math.random() * 5) + 1;
 }
-askForNumber();
-
-
-
 
 
 
