@@ -10,6 +10,7 @@
         'Saturn',
         'Uranus',
         'Neptune'
+        'Pluto'
     ];
 
     /**
