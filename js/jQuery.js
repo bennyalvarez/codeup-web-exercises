@@ -1,9 +1,18 @@
 "use strict";
 
-alert("The DOM has finished loading.");
+$('#intro').click(function() {
+    $(this).css('background-color', '#FF0');
+});
 
-$('h2').css('color', 'green');
+$('p').dblclick(function() {
+    $(p).css('font-size', '18px');;
+});
 
-$('p').css('font-size', '20px');
-
-$('wrapItUp').css('background-color', 'blue');
+$('li').hover(
+    function() {
+        $(this).css('color', 'red');
+    },
+    function() {
+        $(this).css('color', '#000');
+    }
+);

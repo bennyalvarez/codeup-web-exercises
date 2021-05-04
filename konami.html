@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Where would you like to go???</h1>
+<style>
+    * {
+        background-image: url("img/airport.jpeg");
+        background-size: cover;
+    }
+
+
+    h1 {
+        color: white;
+    }
+</style>
+
+<audio class="audios" id="yes-audio" controls preload="none">
+    <source src="audio/winner.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    // $(document).keyup(function(event){
+    //     console.log(event.keyCode);
+    // });
+
+    // var global = {
+    //
+    //     konami: function() {
+    //         var konamikeys = [38,38,40,40,37,39,37,39,66,65],
+    //             started = false,
+    //             count = 0;
+    //
+    //         $(document).keydown(function(e){
+    //             var reset = function() {
+    //                 started = false;
+    //                 count = 0;
+    //                 return;
+    //             };
+    //
+    //             var key = e.keyCode;
+    //
+    //             // Begin watching if first key in sequence was pressed.
+    //             if(!started){
+    //                 if(key == 38){
+    //                     started = true;
+    //                 }
+    //             }
+    //
+    //             // If we've started, pay attention to key presses, looking for right sequence.
+    //             if (started){
+    //
+    //                 if (konamikeys[count] == key){
+    //                     count++;
+    //                 } else {
+    //                     // Incorrect key, restart.
+    //                     reset();
+    //                 }
+    //                 if (count == 10){
+    //                     // Success!
+    //                     alert('Konami code entered! Do something cool here.');
+    //                     reset();
+    //                 }
+    //             } else {
+    //                 reset();
+    //             }
+    //         });
+    //     }
+    // }
+    //
+    // global.konami();
+
+    function konami(fn) {
+        var input = "";
+        var pattern = "38384040373937396665";
+        $(document).keydown(function(e) {
+            input += e.keyCode;
+            if (input.indexOf(pattern) !== -1) {
+                fn();
+                input = "";
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        konami(function() {
+            alert("You did the Konami! W00t!");
+            var imageUrl = "img/vegas.jpg";
+            $('*').css('background-image', 'url('+imageUrl+')');
+        });
+    });
+
+
+
+
+</script>
+</body>
+</html>
