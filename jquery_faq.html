@@ -9,34 +9,34 @@
     <h2>FAQs on National Parks</h2>
 
     <dl>
-        <dt>What is the largest national park site?</dt>
+        <dt class="highlight">What is the largest national park site?</dt>
         <dd class="invisible">Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd>
 
-        <dt>What is the smallest national park site?</dt>
+        <dt class="highlight">What is the smallest national park site?</dt>
         <dd class="invisible"> Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres.</dd>
 
-        <dt>How many people visit the national parks?</dt>
+        <dt class="highlight">How many people visit the national parks?</dt>
         <dd class="invisible">Total recreation visitors to the national parks in 2019: 327,516,619.</dd>
 
-        <dt>What is the most-visited national park?</dt>
+        <dt class="highlight">What is the most-visited national park?</dt>
         <dd class="invisible"> Great Smoky Mountains National Park - 12.1 million.</dd>
 
-        <dt>What is the National Park Service budget?</dt>
+        <dt class="highlight">What is the National Park Service budget?</dt>
         <dd class="invisible"> Fiscal Year (FY) 2014 Enacted: $2.98 billion</dd>
 
-        <dt>Where can I find a park map?</dt>
+        <dt class="highlight">Where can I find a park map?</dt>
         <dd class="invisible">You can view maps on specific park websites or find national park, National Park System, National Trails System, and other maps.</dd>
 
-        <dt>How do I reserve a tour in a park?</dt>
+        <dt class="highlight">How do I reserve a tour in a park?</dt>
         <dd class="invisible">You can book some park tours through Recreation.gov.</dd>
 
-        <dt>Can I bring my pet to a national park?</dt>
+        <dt class="highlight">Can I bring my pet to a national park?</dt>
         <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
 
-        <dt>Can I bring my service dog to a national park?</dt>
+        <dt class="highlight">Can I bring my service dog to a national park?</dt>
         <dd class="invisible"> Yes, service dogs are legally permitted anywhere in a park that visitors can go. Learn more about service animals in national parks, including the difference between service animals and emotional support animals.</dd>
 
-        <dt>What do I need to know about driving off road in national parks?</dt>
+        <dt class="highlight">What do I need to know about driving off road in national parks?</dt>
         <dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
     </dl>
     <a href="#">Answers</a>
@@ -52,6 +52,11 @@
                 $('dd').toggleClass('invisible');
             });
         });
+
+        $("dt").click(function() {
+            $(this).toggleClass("highlight");
+        });
+
     </script>
 
 </body>
