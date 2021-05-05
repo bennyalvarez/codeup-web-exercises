@@ -40,6 +40,28 @@
         <dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
     </dl>
     <a href="#">Answers</a>
+    <h3 id="national-parks-heading">Big Bend Fast Facts</h3>
+    <ul class="national-parks">
+        <li>Big Bend National Park covers a total area of 801,163 acres</li>
+        <li>The number of people visiting Big Bend in 2019 was 463,832</li>
+        <li>Big Bend was made a national park on June 20, 1935</li>
+        <li>The lowest elevation found in Big Bend is 1,715 feet at the Rio Grande River</li>
+    </ul>
+    <h3>Yosemite National Park Facts</h3>
+    <ul class="national-parks">
+        <li>Yosemite might be our nation’s 3rd national park, but it sparked the idea of national parks</li>
+        <li>Yosemite’s granite rock formations glow like fire at sunset. </li>
+        <li>The park’s diverse landscape supports more than 400 species.</li>
+        <li>Yosemite is home to one of the tallest waterfalls in the world.</li>
+    </ul>
+    <h3>Glacier National Park Facts</h3>
+    <ul class="national-parks">
+        <li>Glacier National Park is a part of the world’s first international peace park. </li>
+        <li>Glacier straddles the Continental Divide, allowing for extreme weather.</li>
+        <li>Going-to-the-Sun Road is a spectacular marvel and a must see on your trip to Glacier. </li>
+        <li>Evidence of human use in the area dates back over 12,000 years. </li>
+    </ul>
+    <button type="button">Click Me!</button>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
         "use strict";
@@ -55,6 +77,39 @@
 
         $("dt").click(function() {
             $(this).toggleClass("highlight");
+        });
+
+
+        // $(document).ready(function() {
+        //     $('button').click(function (event) {
+        //         event.preventDefault();
+        //         $('li').last().css('background-color', '#FF0')
+        //     });
+        // });
+
+        $(document).ready(function() {
+            $('button').click(function(event) {
+                event.preventDefault();
+                $('ul li:last-child').each(function(index) {
+                    $(this).css('background-color', '#FF0');
+                });
+            });
+        });
+
+        $(document).ready(function() {
+            $('h3').click(function(event) {
+                event.preventDefault();
+        $('.national-parks').children().css('font-weight', 'bold');
+            });
+        });
+
+        $(document).ready(function() {
+            $('li').click(function(event) {
+                event.preventDefault();
+                $('ul li:first-child').each(function(index) {
+                    $(this).css('color', 'blue');
+                });
+            });
         });
 
     </script>
