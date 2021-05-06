@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
 * {
-    background-image: url("../img/white-brick-background.jpeg");
+    background-image: url("../img/red-brick-background.jpeg");
 }
 
 h1 {
     text-align: center;
     font-family: 'Berkshire Swash', cursive, Helvetica;
     font-size: 5em;
-    text-shadow: 4px 4px blue;
+    text-shadow: 4px 4px lightskyblue;
 }
 
 #container {
@@ -29,17 +29,18 @@ img {
     height: 350px;
     width: 275px;
     border: 10px solid goldenrod;
-    box-shadow: 5px 5px #888888;
+    box-shadow: 5px 5px black;
 }
 
-button {
-    margin-top: 15px;
-    margin-left: 120px;
-    color: white;
-    background-color: dimgrey;
-}
+/*button {*/
+/*    margin-top: 15px;*/
+/*    margin-left: 120px;*/
+/*    color: white;*/
+/*    background-color: dimgrey;*/
+/*}*/
 
 #btn1 {
+    background-color: blue;
     color: dimgrey;
 
 }

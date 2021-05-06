@@ -8,9 +8,12 @@
 <body>
 <h1>jQuery Traversing</h1>
 <div id="container">
-    <div id="box1" class="picture"><img src="img/mona-lisa-DOM.jpeg"><button type="button" id="btn1">Swap</button></div>
-    <div id="box2" class="picture"><img src="img/george-washington.jpeg"><button type="button" id="btn2">Swap</button></div>
-    <div id="box3" class="picture"><img src="img/napoleon-pedro.jpeg"><button type="button" id="btn3">Swap</button></div>
+    <div id="box1" class="picture"><img id="mona" src="img/mona-lisa.jpeg"><button type="button" id="btn1">Swap</button></div>
+    <div id="box2" class="picture"><img id="gw" src="img/GW.jpeg"><button type="button" id="btn2">Swap</button></div>
+    <div id="box3" class="picture"><img id="farmers" src="img/farmers.jpeg"><button type="button" id="btn3">Swap</button></div>
+</div>
+<div id="wrapper">
+<!--    <h1>Time to learn some AJAX!</h1>-->
 </div>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -50,12 +53,34 @@
             thisImage.attr('src', previousImageSrc)
         });
 
-        $('*').click(function() {
-            $('*').css('backgroundImage', 'url(img/red-brick-background.jpeg)');
+        $('*').dblclick(function() {
+            $('*').css('backgroundImage', 'url(img/white-brick-background.jpeg)');
         });
 
+        $("#farmers").click(function(){
+            // Change src attribute of image
+            $(this).attr("src", "img/napoleon-pedro.jpeg");
+        });
 
+        $("#mona").click(function(){
+            // Change src attribute of image
+            $(this).attr("src", "img/mona-lisa-DOM.jpeg");
+        });
 
+        $("#gw").click(function(){
+            // Change src attribute of image
+            $(this).attr("src", "img/george-washington.jpeg");
+        });
+
+        $("h1").dblclick(function(){
+            // Change src attribute of image
+            $(this).html("Goodluck on Next Week's Test Neptunes!");
+        });
+
+        // $("#wrapper").dblclick(function(){
+        //     // Change src attribute of image
+        //     $(this).html("Goodluck Neptune on next week's Test!");
+        // });
 
 
     });
