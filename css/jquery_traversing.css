@@ -1,0 +1,28 @@
+* {
+    background-color: darkgrey;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    width: 800px;
+    height: auto;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div {
+    margin: 20px;
+
+}
+
+img {
+    height: 350px;
+    width: 275px;
+    border: 10px solid goldenrod;
+}
+
