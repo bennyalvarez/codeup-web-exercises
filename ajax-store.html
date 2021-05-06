@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button id="the-button">Refresh</button>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    function buildStuff() {
+        $("#insertProducts").html("");  //target this is where it inserts into table.
+        $.ajax("data/inventory.json").done(function (products) {
+            console.log(products);
+            for (var j = 0; j < products.length; j++) {
+                var htmlStr = "<tr id='product-" + (j + 1) + "' class='products'>";
+                htmlStr += "<td>" + products[j].title + "</td>";
+                htmlStr += "<td>" + products[j].quantity + "</td>";
+                htmlStr += "<td>" + products[j].price + "</td>";
+                htmlStr += "<td>" + products[j].categories + "</td>";
+                htmlStr += "</tr>";
+                $("#insertProducts").append(htmlStr);
+            }
+        });
+    }
+
+    $("#the-button").click(buildStuff);
+
+    buildStuff();
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
+        alert("AJAX call completed successfully!");
+        console.log("Request status: " + status);
+        console.log("Data returned from server:");
+        console.log(data);
+    });
+
+})();
+</script>
+
+</body>
+</html>
