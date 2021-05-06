@@ -8,10 +8,59 @@
 <body>
 <h1>jQuery Traversing</h1>
 <div id="container">
-    <div id="box1" class="picture"><img src="img/mona-lisa.jpeg"></div>
-    <div id="box2" class="picture"><img src="img/george-washington.jpeg"></div>
-    <div id="box3" class="picture"><img src="img/napoleon-pedro.jpeg"></div>
+    <div id="box1" class="picture"><img src="img/mona-lisa-DOM.jpeg"><button type="button" id="btn1">Swap</button></div>
+    <div id="box2" class="picture"><img src="img/george-washington.jpeg"><button type="button" id="btn2">Swap</button></div>
+    <div id="box3" class="picture"><img src="img/napoleon-pedro.jpeg"><button type="button" id="btn3">Swap</button></div>
 </div>
 <script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function (){
+
+        $("#btn1").click(function(){
+            var nextImage = $(this).parent().next().children().first();
+            var nextImageSrc = nextImage.attr('src');
+            var thisSrc = $(this).prev().attr('src');
+            $(this).prev().attr('src', nextImageSrc);
+            nextImage.attr('src',thisSrc);
+        });
+
+        $("#btn2").click(function(){
+            var randomNumber = Math.floor(Math.random()*2);
+            var nextImage = $(this).parent().next().children().first();
+            var nextImageSrc = nextImage.attr('src');
+            var previousImage = $(this).parent().prev().children().first();
+            var previousImageSrc = previousImage.attr('src');
+            var thisImage = $(this).prev();
+            var thisSrc = thisImage.attr('src');
+            if (randomNumber === 0){
+                previousImage.attr('src', thisSrc);
+                thisImage.attr('src', previousImageSrc);
+            } else {
+                $(this).prev().attr('src', nextImageSrc);
+                nextImage.attr('src', thisSrc);
+            }
+        });
+
+        $("#btn3").click(function(){
+            var previousImage = $(this).parent().prev().children().first();
+            var previousImageSrc = previousImage.attr('src');
+            var thisImage = $(this).prev();
+            var thisSrc = thisImage.attr('src');
+            previousImage.attr('src', thisSrc);
+            thisImage.attr('src', previousImageSrc)
+        });
+
+        $('*').click(function() {
+            $('*').css('backgroundImage', 'url(img/red-brick-background.jpeg)');
+        });
+
+
+
+
+
+    });
+
+
+</script>
 </body>
 </html>
