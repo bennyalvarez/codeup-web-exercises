@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
+.jumbotron {
+    background-image: url("../img/tools-background.jpeg");
+    background-size: cover;
+    text-align: right;
+
+}
+
+.display-4 {
+    font-family: 'Freckle Face', cursive;
+    text-shadow: 5px 5px black;
+    font-size: 100px;
+    color: red;
+}
+
+.lead {
+    font-family: "Comic Sans MS", cursive;
+    text-shadow: 2px 2px #ff0;
+    font-size: 25px;
+    /*padding-right: 7%;*/
+}
+
+.profile-image {
+    position: absolute;
+    top: 350px;
+    height: 60%;
+    width: auto;
+    padding-left: 40px;
+}
+
+.table {
+    border: 5px solid gray;
+    width: 50%;
+    margin-top: 60px;
+    margin-left: 40%;
+}
+
+th, td {
+    text-align: center;
+}
+
+#the-button {
+    float: right;
+    margin-right: 10%;
+}
