@@ -9,8 +9,11 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Benny's Tool Shed</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <p class="lead">If you're not the sharpest tool in the shed, then go buy some!</p>
     </div>
+</div>
+<div class="profile-header">
+    <img class="img-circle profile-image" src="img/construction-worker.png" alt="user">
 </div>
 <div id="container">
 <table class="table table-striped" id="products">
@@ -41,7 +44,7 @@
                 var htmlStr = "<tr id='product-" + (j + 1) + "' class='products'>";
                 htmlStr += "<td>" + products[j].title + "</td>";
                 htmlStr += "<td>" + products[j].quantity + "</td>";
-                htmlStr += "<td>" + products[j].price + "</td>";
+                htmlStr += "<td>" + "$" + (products[j].price).toFixed(2) + "</td>";
                 htmlStr += "<td>" + products[j].categories + "</td>";
                 htmlStr += "</tr>";
                 $("#insertProducts").append(htmlStr);

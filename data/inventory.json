@@ -37,12 +37,13 @@
             "tool"
         ],
         "price": 5
-}, {
-    "title": "Tape Measure",
-    "quantity": 50,
-    "categories": [
-        "tool"
-    ],
-    "price": 5
-}
+    }, {
+        "title": "Tape Measure",
+        "quantity": 50,
+        "categories": [
+            "tool"
+        ],
+        "price": 5
+    }
+
 ]
