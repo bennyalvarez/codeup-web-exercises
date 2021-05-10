@@ -16,10 +16,10 @@
 </head>
 <body>
 
-<h1>My First Mapbox Map!</h1>
+<h1>My Favorite Restaurants</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
-<div id='map'></div>
+<div id='map' style='width: 600px; height: 500px;'></div>
 
 <!-- Mapbox JS -->
 <script src="js/keys.js"></script>
@@ -30,20 +30,80 @@
 
 <!-- Custom JS -->
 <script>
-    mapboxgl.accessToken = YOUR_TOKEN_HERE;
+    mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
+        style: 'mapbox://styles/mapbox/streets-v11',
         zoom: 10,
         center: [-98.4916, 29.4252]
     });
 
     // the  geocode method from mapbox-geocoder-utils.js
-    geocode("600 Navarro St #350, San Antonio, TX 78205", YOUR_TOKEN_HERE).then(function(result) {
+    geocode("849 E Commerce St #393, San Antonio, TX 78205", MAPBOX_ACCESS_TOKEN).then(function(result) {
         console.log(result);
         map.setCenter(result);
-        map.setZoom(20);
+        map.setZoom(9);
+        marker.setLngLat({lng: result[0], lat: result[1]});
+        marker.addTo(map)
     });
+
+    var marker = new mapboxgl.Marker({
+        color: 'red',
+    })
+        .setLngLat([-98.48434, 29.42395])
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML("<h3>Fogo de Chao</h3>")
+        .addTo(map);
+
+    marker.setPopup(popup);
+
+    marker.setDraggable(true);
+
+
+    // marker.on('dragged', function() {
+    //     $('h1').html(marker.getLngLat().toString())
+    //     marker.setPopup();
+    // });
+
+    // $(marker).click(function(){
+    //     popup.addTo(map);
+    // })
+
+
+    var markerTwo = new mapboxgl.Marker({
+        color: 'red',
+    })
+        .setLngLat([-98.63965, 29.53158])
+        .addTo(map);
+
+    var popupTwo = new mapboxgl.Popup()
+        .setLngLat(markerTwo.getLngLat())
+        .setHTML("<h3>Smashin Crab</h3>")
+        .addTo(map);
+
+    markerTwo.setPopup(popupTwo);
+
+    markerTwo.setDraggable(true);
+
+    var markerThree = new mapboxgl.Marker({
+        color: 'red',
+    })
+        .setLngLat([ -98.28825, 29.54614])
+        .addTo(map);
+
+    var popupThree = new mapboxgl.Popup()
+        .setLngLat(markerThree.getLngLat())
+        .setHTML("<h3>My Chockdee</h3>")
+        .addTo(map);
+
+    markerThree.setPopup(popupThree);
+
+    markerThree.setDraggable(true);
+
+
 
 </script>
 </body>
