@@ -8,9 +8,14 @@
 </head>
 <body>
 <div class="container">
-<div id='map' style='width: 600px; height: 500px;'></div>
     <div id="current"><h1>Weather Conditions</h1></div>
-<div class="forecast"></div>
+    <div id="day1" class="daily-weather"></div>
+    <div id="day2" class="daily-weather"></div>
+    <div id="day3" class="daily-weather"></div>
+    <div id="day4" class="daily-weather"></div>
+    <div id="day5" class="daily-weather"></div>
+<div id='map' style='width: 600px; height: 500px;'></div>
+    <div class="forecast"></div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/keys.js"></script>
@@ -28,34 +33,62 @@
     // });
 
     var coordinates = [29.4241, -98.4936];
-
         //     var today = resp.daily[0];
         //     var todayDate = new Date(today.dt * 1000);
         //     console.log(todayDate);
         // });
-
     function getWeather() {
         $('.forecast').html('');
         $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
             .done(function (resp) {
-                console.log(resp);
-                var currentConditions = resp.current.temp.toFixed(0);
-                $('#current').append(currentConditions);
-                for(var i = 0; i < 3; i++){
-                    var dailyForecast = resp.daily[i];
-                    var date = new Date(dailyForecast.dt * 1000);
-                    var dayOnly = date.getUTCMonth();
-                    console.log(dayOnly);
+                console.log(resp);      //daily.cloud.0
+
+
+                // var currentConditions = resp.current.temp.toFixed(0);
+                // $('#current').append(currentConditions);
+                // for(var i = 0; i < 3; i++){
+                //     var dailyForecast = resp.daily[i];
+                //     var date = new Date(dailyForecast.dt * 1000);
+                //     var dayOnly = date.getUTCMonth();
+                //     console.log(dayOnly);
                     // var newForecast = resp.tomorrow.temp;
                     // newForecast += '<p> High' + dailyForecast.max.toFixed(0) + '</p><br>';
                     // newForecast += '<p> Low' + dailyForecast.min.toFixed(0) + '</p>'
                     // $('.forecast').append(newForecast)
 
+                function rainChance(index) {
+                    var rainChanceDecimal = resp.daily[index].pop;
+                    var rainChancePercentage = rainChanceDecimal * 100 + '% Chance of Precipitation';
+                    return rainChancePercentage;
+                }
+                function humidityLevel(index) {
+                    var humidity = "Humidity: " + resp.daily[index].humidity + '%';
+                    return humidity;
+                }
+                function weatherDescription(index) {
+                    var description = resp.daily[index].weather[0].description;
+                    return description;
+                }
+
+                function dailyDate(index) {
+                    var today = resp.daily[index];
+                    var todayDate = new Date(today.dt * 1000).toString();
+                    todayDate = todayDate.split(' ');
+                    var date =
+                }
+
+                function highandLowTemp(inidex) {
+                    var highTemp= Math.round
                 }
             });
+
     }
 
     getWeather();
+
+    // var iconCode = data.weather[0].icon;
+    // var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+    // $(".forecast").html("<img src='" + iconUrl  + "'>");
 
 </script>
 </div>
