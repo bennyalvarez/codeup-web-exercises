@@ -2,19 +2,247 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weather Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        .info{
+            background-color: #2F3E46;
+            text-align: center;
+            width: 550px;
+            margin: 5px;
+            border: #52796F 1px solid;
+            padding-top: 10px;
+
+        }
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background-color: #52796F;
+        }
+
+        h3 {
+            color: #5DA0B6;
+        }
+
+        p > strong {
+            color: #CAD2C5;
+        }
+
+        p {
+            color: #5DA0B6;
+        }
+
+        h2 {
+            color: #CAD2C5;
+        }
+
+
+    </style>
 </head>
 <body>
-    <h1>Open the console</h1>
-    <script src="js/keys.js"></script>
-    <script>
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
-            APPID: OPEN_WEATHER_APPID,
-            q:     "San Antonio, US"
-        }).done(function(data) {
-            console.log(data);
-        });
-    </script>
 
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+
+<!--main div my days for weather will go into-->
+<!--    <h1>3 Day Forecast</h1>-->
+<div id="main">
+
+</div>
+
+<!--    mapbox style div-->
+<div id="map-container">
+    <div id='map' style='width: 2000px; height: 600px;'></div>
+</div>
+<pre id='coordinates' class='coordinates'></pre>
+
+
+
+<!--bootstrap-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- js scripts-->
+<script src="js/keys.js"></script>
+<script src="js/mapbox-utils.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+<script src="js/jquery.js"></script>
+
+
+<script>
+    // Array of icon objects
+    var icons = [{
+        link: "icons/weatherIcons/SVG/Sun.svg",
+        name: "clear-day"
+    },
+        {
+            link: "icons/weatherIcons/SVG/Moon-Full.svg",
+            name: "clear-night"
+        },
+        {
+            link: "icons/weatherIcons/SVG/Cloud-Rain.svg",
+            name: "rain"
+        },
+        {
+            link: "icons/weatherIcons/SVG/Snowflake.svg",
+            name: "snow"
+        },
+        {
+            link: "icons/weatherIcons/SVG/Cloud-Hail.svg",
+            name: "sleet"
+        },
+        {
+            link: "icons/weatherIcons/SVG/Wind.svg",
+            name: "wind"
+        },
+        {
+            link: "icons/weatherIcons/SVG/Cloud-Fog.svg",
+            name: "fog"
+        },
+        {
+            link: "icons/weatherIcons/SVG/Cloud.svg",
+            name: "cloudy"
+        },
+        {
+            link: "icons/weatherIcons/SVG/Cloud-Sun.svg",
+            name: "partly-cloudy-day"
+        },
+        {
+            link: "'icons/weatherIcons/SVG/Cloud-Moon.svg",
+            name: "partly-cloudy-night"
+        }
+    ];
+
+
+
+    // request for dark sky API to default to San Antonio Weather
+
+    $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
+        .done(function (resp) {
+            console.log(resp);
+
+            // creating html with for loop
+
+        var html = '';
+
+
+        for(var i = 0; i < 3; i++){
+            html += "<div class='info container'>";
+            html += "<h3>" + checkDate(data.daily.data[i].time) + "</h3>";
+            html += "<h2>" + Math.round(data.daily.data[i].temperatureMin) + "° /" + " " + Math.round(data.daily.data[i].temperatureMax) + "°" + "</h2>";
+            html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
+            html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
+            html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
+            html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
+            html += "<p>" + "<strong>" + "Pressure: " + "</strong>"+ data.daily.data[i].pressure +"</p>";
+            html += "</div>";
+        }
+
+        $('#main').html(html);
+
+        // this function compares my icons with the API's weather icons
+
+        function checkIcon (icons, apiIcon) {
+
+            for(var i = 0; i < icons.length; i++){
+                if(icons[i].name === apiIcon){
+                    return icons[i].link;
+                }
+            }
+        }
+
+        //mapbox info
+
+        mapboxgl.accessToken = mapBoxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v9',
+            zoom: 10,
+            center: [-98.4916, 29.4252]
+
+        });
+
+
+        // marker for mapbox
+
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([-98.4916, 29.4252])
+            .addTo(map);
+
+        // geocoder for Mapbox added in
+
+        map.addControl(new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken
+        }));
+
+        //this adds zoom navigation and disables scroll to keep from marker jumping around
+        map.addControl(new mapboxgl.NavigationControl());
+        map.scrollZoom.disable();
+
+        // this moves my draggable marker to new searched location and updates weather.
+        map.on("moveend", function() {
+            marker.setLngLat(map.getCenter());
+            onDragEnd()
+        });
+
+        // this function grabs coordinates after marker is done dragging and updates the HTML with weather information
+
+        function onDragEnd() {
+
+            var lngLat = marker.getLngLat();
+            var lng = lngLat.lng ;
+            var lat = lngLat.lat;
+
+            $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyToken + "/" + lat + ',' + lng).done(function (data) {
+                var html = '';
+
+
+                for (var i = 0; i < 3; i++) {
+                    html += "<div class='info container'>";
+                    html += "<h3>" +  checkDate(data.daily.data[i].time) + "</h3>";
+                    html += "<h2>" +  Math.round(data.daily.data[i].temperatureMin) + "° /" + " " + Math.round(data.daily.data[i].temperatureMax) + "°" + "</h2>";
+                    html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
+                    html += "<p>" + "<strong>" + "Clouds: " + "</strong>" + data.daily.data[i].summary + "</p>";
+                    html += "<p>" + "<strong>" + "Humidity: " + "</strong>" + data.daily.data[i].humidity + "</p>";
+                    html += "<p>" + "<strong>" + "Wind: " + "</strong>" + data.daily.data[i].windSpeed + "</p>";
+                    html += "<p>" + "<strong>" + "Pressure: " + "</strong>" + data.daily.data[i].pressure + "</p>";
+                    html += "</div>";
+                }
+                $('#main').html(html);
+
+            });
+        }
+        marker.on('dragend', onDragEnd);
+
+
+        //this function checks and converts the date to display in HTML
+        function checkDate (data) {
+
+            var dateObject = new Date(data * 1000);
+            var month = dateObject.getUTCMonth() + 1;
+            var day = dateObject.getUTCDate();
+            var year = dateObject.getUTCFullYear();
+            return month + "/" + day + "/" + year;
+        }
+    });
+
+
+
+
+
+</script>
 </body>
 </html>

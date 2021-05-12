@@ -9,14 +9,23 @@
 </head>
 <body>
 <div class="container">
-    <div id="current"><h1>San Antonio Forecast</h1></div>
+    <div id="current"><h1>What's the Weather Forecast</h1></div>
     <div id="day-0" class="daily-weather"></div>
     <div id="day-1" class="daily-weather"></div>
     <div id="day-2" class="daily-weather"></div>
     <div id="day-3" class="daily-weather"></div>
     <div id="day-4" class="daily-weather"></div>
+    <img src="http://openweathermap.org/img/w/[icon].png">
+
+
+    <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">Get Weather<i class="fa fa-search"></i></button>
+    </form>
+
 <div id='map' style='width: 600px; height: 500px;'></div>
     <div class="forecast"></div>
+    </div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/keys.js"></script>
@@ -66,6 +75,12 @@
                     var humidity = "Humidity: " + resp.daily[index].humidity + '%';
                     return humidity;
                 }
+
+                function iconPicture(index) {
+                    var icon = resp.daily[index].weather[0].icon;
+                    return icon;
+                }
+
                 function weatherDescription(index) {
                     var description = resp.daily[index].weather[0].description;
                     return description;
@@ -86,7 +101,7 @@
                     return highAndLowTemps;
                 }
                 for (var i = 0; i <=4; ++i) {
-                    $('#day-' + i + '').html(highAndLowTemps(i) + ' ' + dailyDate(i) + '<br>' + rainChance(i) + '<br>' + weatherDescription(i) + '<br>' + humidityLevel(i))
+                    $('#day-' + i + '').html(highAndLowTemps(i) + ' ' + dailyDate(i) + '<br>' + rainChance(i) + " " + iconPicture(i) + '<br>' + weatherDescription(i) + '<br>' + humidityLevel(i))
                 }
                 // $('#day1').html(humidityLevel)
             });
@@ -107,20 +122,77 @@
         zoom: 12 // starting zoom can be 0 to 24
     });
 
-    var popup = mapboxgl.Popup()
-        .setHTML('<h3' + getGeoLocal().toString() + '</h3>')
-        .setMaxWidth("300px");
-    var marker = new mapboxgl.Marker()
-        .setLngLat([98.49272, 29.42527])
-        .setDraggable(true)
-        .setPopup(popup)
-        .addTo(map);
-    marker.on('dragend', function () {
-        coords = marker.getLngLat().toArray().reverse();
-        getWeather();
-        var lngLat = marker.getLngLat();
 
+    geocode("849 E Commerce St #393, San Antonio, TX 78205", MAPBOX_ACCESS_TOKEN).then(function(result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(9);
+        marker.setLngLat({lng: result[0], lat: result[1]});
+        marker.addTo(map)
+    });
+
+    var marker = new mapboxgl.Marker({
+        color: 'red',
     })
+        .setLngLat([-98.48434, 29.42395])
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML("<h3>Fogo de Chao</h3>")
+        .addTo(map);
+
+    marker.setPopup(popup);
+
+    marker.setDraggable(true);
+
+
+
+
+
+
+
+
+
+
+
+    //
+    // // var popup = mapboxgl.Popup()
+    // //     .setHTML('<h3' + getGeoLocal().toString() + '</h3>')
+    // //     .setMaxWidth("300px");
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([98.49272, 29.42527])
+    //     .setDraggable(true)
+    //     .setPopup(popup)
+    //     .addTo(map);
+    // marker.on('dragend', function () {
+    //     coords = marker.getLngLat().toArray().reverse();
+    //     getWeather();
+    //     var lngLat = marker.getLngLat();
+    //     latLngObj = {lat: lngLat.lat, lng: lngLat.lng};
+    //     console.log(latLngObj);
+    // });
+    // // function getGeoLocal() {
+    // //     reverseGeocode(latLngObj, MAPBOX_ACCESS_TOKEN).then(function (results) {
+    // //         console.log(results);
+    // //         cityInfo = results;
+    // //     })
+    // //     return cityInfo;
+    // // }
+    //
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat(marker.getLngLat())
+    //     .setHTML("<h3>Statue of Liberty</h3>")
+    //     .addTo(map);
+    //
+    // marker.setPopup(popup);
+    //
+    // marker.setDraggable(true);
+    //
+    // marker.on('dragged', function() {
+    //     $('h1').html(marker.getLngLat().toString())
+    //     marker.setPopup();
+    // });
 
 
 </script>
