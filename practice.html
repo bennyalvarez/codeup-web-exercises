@@ -5,6 +5,14 @@
     <title>Benny's Practice</title>
 </head>
 <body>
+    <p class="surf">Hello World!</p>
+    <p class="surf">Have a great Day Today!</p>
+    <ul>
+        <li class="list">One</li>
+        <li class="list">Two</li>
+        <li class="list">Three</li>
+    </ul>
+
     <button id="button">Press Me!</button>
     <script>
         "use strict";
@@ -36,6 +44,21 @@
         }
         var cancel = document.getElementById('button');
         cancel.addEventListener('click', cancelTheBOM);
+
+        // button.innerHTML = "Hello!";     //This is to modify button
+
+        var getButton = document.getElementById('button');
+            console.log(getButton);
+
+        var getP = document.getElementsByClassName('surf')
+            console.log(getP[0].innerHTML);
+
+        var getList = document.getElementsByTagName('li');
+        console.log(getList);
+
+        var bodyElement = document.getElementsByTagName('body')[0];
+        bodyElement.style['background-color'] = 'green';
+
 
 
     </script>
