@@ -14,8 +14,11 @@
     </ul>
 
     <button id="button">Press Me!</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         "use strict";
+
+
 
         var count = 0;
         var max = 10;
@@ -59,7 +62,10 @@
         var bodyElement = document.getElementsByTagName('body')[0];
         bodyElement.style['background-color'] = 'green';
 
-
+        $(document).ready(function () {
+            var firstThing = $('.surf').html();
+            alert(firstThing);
+        });
 
     </script>
 </body>

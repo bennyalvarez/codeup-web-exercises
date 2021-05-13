@@ -21,15 +21,31 @@
         <li>Friday</li>
         <li>Saturday</li>
     </ul>
+    <h2 class="codeup">Title#2</h2>
+    <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, animi aperiam, aut culpa deserunt dolor eaque illo laudantium magnam natus nobis optio placeat quae quaerat quis recusandae sequi unde velit.</p>
+    <br>
+    <p id="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aspernatur at commodi dicta eligendi facere fugiat fugit, incidunt iste omnis quaerat quas ratione saepe sed tempore unde vitae, voluptatibus!</p>
     </div>
     <script src="js/jquery-2.2.4.js"></script>
     <script src="js/jQuery.js"></script>
     <script>
     $(document).ready(function() {
     // alert( 'The DOM has finished loading!' );
-        var theDiv =$("#wrapItUp").text();
+        var theDiv =$("#intro").html();
         alert(theDiv);
         var theListIntro = $("#introToTheList")
+
+        $('p').css('font-size', '14px');
+
+        $('.codeup').css('border', '1px solid red');
+
+        $('li').css('font-size', '20px');
+
+        $("h1, p, li").css("background-color", "palegoldenrod");
+
+        var alertMe = $('h1, li, p').each(function() {        //this function alerts contents of h1, l1, p
+            alert($(this).html());
+        });
     });
 
 
