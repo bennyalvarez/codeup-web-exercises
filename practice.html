@@ -5,6 +5,39 @@
     <title>Benny's Practice</title>
 </head>
 <body>
-    <script src="js/for_loops2.js"></script>
+    <button id="button">Press Me!</button>
+    <script>
+        "use strict";
+
+        var count = 0;
+        var max = 10;
+        var interval = 1000;
+
+        var intervalID = setInterval(function () {
+            if (count >= max) {
+                clearInterval(intervalID);
+                console.log("All done.");
+            } else {
+                count++;
+                console.log('Repeating this line ' + count)
+            }
+        }, interval);
+
+        var delay = 5000;
+
+        var timeoutID = setTimeout(function () {
+                alert('Here is a delayed hello!');
+        }, delay);
+
+        function cancelTheBOM() {
+            clearInterval(intervalID);
+            alert('You did this bro!!!');
+
+        }
+        var cancel = document.getElementById('button');
+        cancel.addEventListener('click', cancelTheBOM);
+
+
+    </script>
 </body>
 </html>

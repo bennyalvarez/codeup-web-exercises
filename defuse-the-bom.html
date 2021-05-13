@@ -28,13 +28,14 @@
     }
 
     //needed to create a variable to setInterval
-    var stopTimer = setInterval(updateTimer, 1000);
+    var stopTimer = setInterval(updateTimer, 1000);   //This is the first ToDo
 
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-        clearInterval(stopTimer);
+        clearInterval(stopTimer);                   //This is the 2nd ToDo
+        alert('Woohoo! We are safe man!');
 
     }
 
