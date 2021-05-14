@@ -31,25 +31,22 @@ const users = [
 
 // TODO: fill in your name and email and add some programming languages you know
 // to the languages array
-
-const user = {name: 'benny', email: 'benjamin@codeup.com', languages: ['html', 'css', 'javascript']};
-
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-const name = 'your_name_here';
-const email = '';
-const languages = [];
+const name = 'Benny';
+const email = 'benjamin.c.alvarez21@gmail.com';
+const languages = ['HTML', 'css', 'Javascript'];
 
-name = 'benny';
-email = 'benjamin@codeup.com';
-languages = ['html', 'css'];
+// name = 'Johnny';
+// email = 'benjamin@codeup.com';
+// languages = ['html', 'css'];
 
 // TODO: rewrite the object literal using object property shorthand
-users.push({
-  name: name,
-  email: email,
-  languages: languages
-});
+// users.push({
+//   name: name,
+//   email: email,
+//   languages: languages
+// });
 
 //new way
 
@@ -59,22 +56,30 @@ users.push({
   languages
 });
 
+console.log(users);
+
 
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
-  return emails.push(user.email);
-});
-users.forEach(function(user) {
-  return names.push(user.name);
+// users.forEach(function(user) {
+//   return emails.push(user.email);
+// });
+// users.forEach(function(user) {
+//   return names.push(user.name);
+// });
+
+//using Arrow functions
+
+users.forEach(user => {
+  let {email} = user;
+  console.log(email);
+  return emails.push(email)
 });
 
-users.forEach = user => email;
-
-users.forEach = user => name;
+users.forEach(user => names.push(user.name));
 
 
 
@@ -91,10 +96,13 @@ users.forEach(function(user) {
   const {name, email, languages} = user;
 
   // TODO: rewrite the assignment below to use template strings
-  developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
-});
+//   developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+// });
 
-developers.push(`${name}'s email is ${email}. ${name} knows ${languages}.`)
+//new way
+developers.push(`${name}'s email is ${email}. ${name} knows ${languages.join(',')}.`)
+
+console.log(developers);
 
 // TODO: Use `let` for the following variable
 let list = '<ul>';
@@ -102,13 +110,17 @@ let list = '<ul>';
 // TODO: rewrite the following loop to use a for..of loop
 developers.forEach(function (developer) {
 
-for(developer of developers) {
-  console.log(developers);
+for(let developer of developers) {
+  list += <li>${developer}</li>
 }
+  list += '<ul>';
+
+  console.log(list);
+
 
   // TODO: rewrite the assignment below to use template strings
-  list += '<li>' + developer + '</li>';
-});
-list += '</ul>';
-
-list += `<li> ${developer} </li>`;
+//   list += '<li>' + developer + '</li>';
+// });
+// list += '</ul>';
+//
+// list += `<li> ${developer} </li>`;
