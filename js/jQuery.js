@@ -4,9 +4,9 @@ $('#intro').click(function() {
     $(this).css('background-color', '#FF0');
 });
 
-$('p').dblclick(function() {
-    $(p).css('font-size', '18px');;
-});
+// $('p').dblclick(function() {
+//     $(p).css('font-size', '18px');
+// });
 
 $('li').hover(
     function() {
