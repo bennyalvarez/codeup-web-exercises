@@ -13,6 +13,7 @@ function addUp(num) {
 
 console.log(addUp(5));
 
+//My Homework
 
 // Luke Skywalker has family and friends. Help him remind them who is who.
 // Given a string with a name, return the relation of that person to Luke.
