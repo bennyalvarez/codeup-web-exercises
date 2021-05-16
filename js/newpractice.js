@@ -26,10 +26,38 @@ console.log(addUp(5));
 //create a variable for the object
 
 
+function lukeFamily(str) {
+    var lukeFamBam {
+
+    }
+}
+
+
+
 
 // Create a function that takes two numbers as arguments (num, length)
 // and returns an array of multiples of num up to length.
 //do a for loop, understand length
+//multiples are divisible without a remainder
+
+// Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num up to length.
+//
+//     Examples:
+//
+// arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35]
+//
+// arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+//
+// arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
+//
+// Notes Notice that num is also included in the returned array.
+
+function multiples(num, length) {
+    var newArr = [];
+    if(length == undefined)
+    for(var i = num; i >)
+
+}
 
 
 
@@ -40,6 +68,9 @@ arrayToString([1, 2, 3, 4, 5, 6]) ➞ "123456"
 arrayToString(["a", "b", "c", "d", "e", "f"]) ➞ "abcdef"
 arrayToString([1, 2, 3, "a", "s", "dAAAA"]) ➞ "123asdAAAA"*/
 
+function changeArray(arr) {
+    return arr.toString();
+}
 
 
 
@@ -65,3 +96,13 @@ arrayToString([1, 2, 3, "a", "s", "dAAAA"]) ➞ "123asdAAAA"*/
 //   lastName: "LEE",
 //   id: "43"
 // }
+
+function newObj(str) {
+    var newObject = {
+        parseCode: str[0],
+        firstName:str[1],
+        lastName: str[2],
+        id: str[3]
+    }
+    return newObject;
+}
