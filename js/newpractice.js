@@ -27,9 +27,11 @@ console.log(addUp(5));
 
 
 function lukeFamily(str) {
-    var lukeFamBam {
-
+    var lukeFamBam = {
+        Person:str,
+        Relation: str
     }
+    return lukeFamBam;
 }
 
 
@@ -52,12 +54,14 @@ function lukeFamily(str) {
 //
 // Notes Notice that num is also included in the returned array.
 
-function multiples(num, length) {
-    var newArr = [];
-    if(length == undefined)
-    for(var i = num; i >)
-
-}
+// function multiples(num, length) {
+//     var newArr = [];
+//     if(length == undefined)
+//     for(var i = num; i >) {
+//
+//     }
+//
+// }
 
 
 
@@ -69,10 +73,11 @@ arrayToString(["a", "b", "c", "d", "e", "f"]) ➞ "abcdef"
 arrayToString([1, 2, 3, "a", "s", "dAAAA"]) ➞ "123asdAAAA"*/
 
 function changeArray(arr) {
-    return arr.toString();
+    var arrString = arr.toString()
+    return arrString;
 }
 
-
+console.log(changeArray([1, 2, 3, 4, 5, 6]));
 
 //BONUS
 // Create a function which takes in an encoded string and returns an object according
@@ -106,3 +111,9 @@ function newObj(str) {
     }
     return newObject;
 }
+
+
+const bill = 275;
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+console.log("The bill was ${bill}, the tip was ${tip}, and the total value ${bill}");
+
