@@ -55,10 +55,10 @@ console.log(es6emails);
 /* Use .filter to create an array of user objects
 where each user object has at least 3 languages in the languages array.*/
 
-let trilinguals = user.filter(function(user) {
-    return user.languages.length >= 3;
-});
-console.log(trilinguals);
+// let trilinguals = user.filter(function(user) {
+//     return user.languages.length >= 3;
+// });
+// console.log(trilinguals);
 
 
 
@@ -101,4 +101,32 @@ console.log(trilinguals);
 // //var mileages = cars.map(function(car) {
 // return car.mileage;
 // });
+
+//#4.
+
+// Use .reduce to get the total years of experience from the list of users.
+// Once you get the total of years you can use the result to calculate the average.
+
+let totalOfAllUsersYearsOfExp = users.reduce((totalYearsOfExp, user) => {
+    return totalYearsOfExp + user.yearsOfExperience;
+},0);
+
+console.log(totalOfAllUsersYearsOfExp);
+
+//#5. Use .reduce to get the longest email from the list of users.
+
+
+//example
+// var longest = arr.reduce(
+//     function (a, b) {
+//         return a.length > b.length ? a : b;
+//     }
+// );
+
+let emailLength = users.reduce((a, b)=>{
+    return a.length > b.email.length ? a : b.email;
+}, []);
+console.log(emailLength);
+
+//6.
 
