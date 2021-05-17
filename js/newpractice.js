@@ -26,13 +26,33 @@ console.log(addUp(5));
 //create a variable for the object
 
 
-function lukeFamily(str) {
-    var lukeFamBam = {
-        Person:str,
-        Relation: str
-    }
-    return lukeFamBam;
-}
+
+
+    var lukeFamily = [
+        {
+        person: "Darth Vader",
+        relation: "father"
+    },
+    {
+        person: "Leia",
+        relation: "sister"
+    },
+    {
+        person: "Han",
+        relation: "brother-in-law"
+    },
+    {
+
+        person: "R2D2",
+        relation: "droid"
+    },
+    ];
+
+    console.log(lukeFamily);
+
+
+var stringCount = "Hello";
+
 
 
 
@@ -77,7 +97,7 @@ function changeArray(arr) {
     return arrString;
 }
 
-console.log(changeArray([1, 2, 3, 4, 5, 6]));
+console.log(changeArray([ 1, 2, 3, 4, 5, 6]));
 
 //BONUS
 // Create a function which takes in an encoded string and returns an object according
@@ -113,7 +133,7 @@ function newObj(str) {
 }
 
 
-const bill = 275;
-const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
-console.log("The bill was ${bill}, the tip was ${tip}, and the total value ${bill}");
+// const bill = 275;
+// const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+// console.log("The bill was ${bill}, the tip was ${tip}, and the total value ${bill}");
 
