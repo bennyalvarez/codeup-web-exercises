@@ -32,3 +32,13 @@
 
     fizzBuzz(30);
 })();
+
+//Write a function that returns number 7
+
+// function seven(input) {
+//     return 7;
+// };
+
+const returnSeven = () => 7;
+
+console.log(returnSeven);
