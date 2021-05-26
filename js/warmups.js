@@ -22,7 +22,7 @@
                 console.log("FizzBuzz");
             } else if (x % 3 === 0) {
                 console.log("Fizz");
-            } else if (X % 5 === 0) {
+            } else if (x % 5 === 0) {
                 console.log("Buzz");
             } else {
                 console.log(x);
@@ -42,3 +42,25 @@
 const returnSeven = () => 7;
 
 console.log(returnSeven);
+
+//write function in js that takes number and returns the number passed multiplied by the number 5. If we pass
+//anything other than a numberinto the function, the function should return the number 0
+
+
+
+function isNumber(input){
+    if (typeof input != "number") {
+        return 0;
+    } else {
+        return input * 5;
+    }
+}
+console.log(isNumber(7));
+
+//david's version
+
+const multiplyByFive = num => typeof num === "number" ? num * 5 : 0;
+console.log(multiplyByFive())
+
+
+
