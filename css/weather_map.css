@@ -1,0 +1,9 @@
+body{
+    background-color: lightskyblue;
+}
+
+.daily-weather{
+    display: flex;
+    border: lightgrey 1px solid;
+    background-color: whitesmoke;
+}
