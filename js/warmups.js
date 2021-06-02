@@ -64,3 +64,17 @@ console.log(multiplyByFive())
 
 
 
+//my practice on arrow functions
+
+// let x = function(x,y) {
+//     return x * y;
+// }
+
+//arrow function version
+
+let x = (x,y) => x * y;
+
+console.log(x(5,5));
+
+let double = (x) => x*x;
+console.log(double(10));
