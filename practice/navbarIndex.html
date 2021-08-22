@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Food Truck Ad-Lister Navbar</title>
     <link rel="stylesheet" href="../css/navbarIndex.css">
+
 </head>
 <body>
     <header>
         <img class="logo" src="../img/FoodTruckAdLister/Logo/redLogo.jpeg" alt="logo">
-        <nav>
+        <nav class="navbar">
             <ul class="nav_links">
                 <li><a href="#">Create Ad</a></li>
                 <li><a href="#">Login</a></li>
@@ -17,5 +18,26 @@
         </nav>
         <a class="cta" href="#"><button>Contact</button></a>
     </header>
+
+    <h2>Sup Dawg!!</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium assumenda autem cum, dolorem ducimus eaque enim esse exercitationem fugiat, inventore, ipsa laudantium magni nulla praesentium quo rem saepe sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, distinctio dolore ducimus esse iusto magnam modi optio quasi rerum ut. A accusantium ad, delectus iste minima nihil non odit sapiente!</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, autem blanditiis corporis culpa dignissimos dolorem error esse impedit ipsum itaque iure laudantium necessitatibus nesciunt quidem rerum sequi vel veniam voluptate?</p>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 50) {
+                $('.navbar').css('background','red');
+            } else {
+                $('.navbar').css('background','transparent');
+            }
+        });
+
+    </script>
 </body>
 </html>
