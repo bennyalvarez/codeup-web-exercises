@@ -1,8 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Ropa+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto+Condensed&display=swap');
 
 body {
-    font-family: 'Gloria Hallelujah', cursive;
-
-    width: 50%;
+    text-align: center;
     margin: auto;
+    background-color: cornflowerblue;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+}
+
+#heading {
+    font-family: 'Luckiest Guy', cursive;
+    color: red;
+    border: 10px solid red;
+    background-color: white;
+    width: 40%;
+    margin: 20px auto;
+}
+
+#owners {
+    border-radius: 50%;
+    border: 10px solid white;
+}
+
+#owner-title {
+    border: 5px solid red;
+    color: red;
+    background-color: white;
+    width: 30%;
+    margin: auto;
+}
+
+#food {
+    border-radius: 5%;
+}
+
+
+
+#wrapper {
+
+    position: relative;
+}
+
+#address {
+    position: fixed;
+    right: 5px;
+    top: 0px;
+}
+
+a:hover {
+    color: red;
 }
